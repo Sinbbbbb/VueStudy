@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+
+        }
+        img {
+            width: 50%;
+            margin: 150px 0 50px 0;
+        }
+        div.shuru {
+            display: inline-block;            
+            padding: 10px 10px;
+            margin: 10px 0;
+            border-top: 1px #e6e6e6 solid;
+            border-bottom: 1px #e6e6e6 solid;
+        }
+        input {
+            margin: 0 0 0 10px ;
+            border: none;
+        }
+        div {
+            padding: 50px 50px;
+
+        }
+        button{
+
+            padding: 5px 35px;
+            margin: 0 15px;
+            border:1px #e6e6e6 solid;
+            background-color:transparent;
+            border-radius:5%;
+        }
+    
+ 
+    </style>
+   
+</head>
+<body>
+    <div id="app">
+    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1965296284,1644599058&fm=26&gp=0.jpghttps://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1965296284,1644599058&fm=26&gp=0.jpg" alt="">
+    <div class="shuru">账号<input id= "name" v-model="name" type="text" placeholder="请输入账号"></div>
+    <div class="shuru">密码<input id = "pasw" v-model="pwd" type="text" placeholder="请输入密码"></div>
+    <div><button id="loginBtn" @click="login()">登录</button><button>注册</button></div>
+</div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script>
+     var app = new Vue ({
+         el:"#app",
+         data:{
+            name:sessionStorage.getItem("name")||"",
+            pwd:""
+         },
+         methods:{
+            login:function(){
+                
+                if(this.name == "lsy"&& this.pwd == "123"){
+                    alert("成功");
+                    sessionStorage.setItem("name",this.name)
+                    console.log(sessionStorage.getItem("name"))
+                }else{
+                    alert("失败");
+                    this.name ='';
+                    sessionStorage.removeItem("name")
+                }
+            }
+         }
+     })
+    </script>
+</body>
+</html>

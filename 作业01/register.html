@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            width: 375px;
+            height: 812px;
+            margin: 0;
+        }
+
+        img {
+            width: 50%;
+            margin: 150px 0 50px 0;
+        }
+
+        div.shuru {
+            display: inline-block;
+            padding: 10px 10px;
+            margin: 10px 0;
+            border-top: 1px #e6e6e6 solid;
+            border-bottom: 1px #e6e6e6 solid;
+        }
+
+        div.shuru #name,
+        div.shuru #pwd {
+            width: 200px;
+        }
+
+        input {
+            margin: 0 0 0 10px;
+            border: none;
+        }
+
+        div {
+            padding: 15px 50px;
+
+        }
+
+        button {
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            padding: 0px 10px;
+            margin: 0 0 0 15px;
+            border: 1px #e6e6e6 solid;
+            background-color: transparent;
+            border-radius: 10%;
+        }
+
+        #yanzhengma {
+            display: inline-block;
+            width: 128px;
+            height: 18px;
+            padding: 0 10px;
+            /* margin: 10px 0; */
+            border: 1px #e6e6e6 solid;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1965296284,1644599058&fm=26&gp=0.jpghttps://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1965296284,1644599058&fm=26&gp=0.jpg"
+        alt="">
+    <div class="shuru">账号<input id="name" v-model="name" type="text" placeholder="请输入账号"></div>
+    <div class="shuru">密码<input id="pwd" v-model="pwd" type="text" placeholder="请输入密码"></div>
+    <div class="shuru">重复密码<input id="rep" v-model="rep" type="text" placeholder="请输入密码"></div>
+    <div><input id="yanzhengma" type="text" placeholder="验证码"><button id="sendBtn">发送验证码</button> </div>
+    <div><button id="zhuce" disabled="disabled">注册</button></div>
+</div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                name:"",
+                pwd:"",
+                rep:""
+            },
+            methods:{
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>
