@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="增加" @click = "add" name="" id="">
+        <input type="button" value="删除" @click = "remove" name="" id="">
+        <ul>
+            <li v-for="(it,index) in arr">
+                {{ index + 1}}黑马程序员校区：{{ it }}
+            </li>
+        </ul>
+        <h2 v-for="item in veg">
+            {{ item.name }}
+        </h2>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                arr:["北京","上海","广州","深圳"],
+                veg:[
+                    {name:"西蓝花炒蛋"},
+                    {name:"蛋炒西蓝花"}
+                ]
+            },
+            methods: {
+              add:function(){
+                  this.veg.push({ name:"花菜炒蛋"})
+              },
+              remove:function(){
+                  this.veg.shift();
+              }
+            }
+        })
+    </script>
+</body>
+</html>

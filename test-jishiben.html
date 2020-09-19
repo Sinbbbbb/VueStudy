@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 需求 -->
+    <!-- 新增+删除+统计+清空+隐藏 -->
+
+    <!-- 新增 -->
+    <!-- 生成列表结构+获取用户输入+回车新增数据 -->
+
+    <!-- 删除 -->
+    <!-- 数据改变和数据绑定的元素同步改变事件自定义参数+splice的应用？ -->
+
+    <!-- 统计 -->
+    <!-- 信息的个数 v-text length -->
+
+    <!-- 清空 -->
+    <!-- 点击清空数组 -->
+
+    <!-- 隐藏 -->
+    <!-- 没有数据时隐藏元素，即数据非空时 -->
+    <div id="app">
+        <input v-model="inputValue" @keyup.enter="add" type="text">
+        <ul>
+            <li class="todo" v-for="(item, index) in list">
+                <div>
+                    <span class="index">{{ index + 1 }}</span>
+                    <label for="">{{ item }}</label>
+                    <button @click="remove(index)"></button>
+                </div>
+            </li>
+        </ul>
+        <footer>
+            <span v-show="list.length!=0">
+                <strong>{{ list.length }}</strong>"items left"
+            </span>
+            <button v-show="list.length!=0" @click="clear">clear</button>
+        </footer>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                list:["chifanfan","shuijiaojiao","daniuniu"],
+                inputValue:"haohao"
+            },
+            methods:{
+                add:function(){
+                    this.list.push(this.inputValue)
+                },
+                remove:function(index){
+                    this.list.splice(index, 1)
+                },
+                clear:function(){
+                    this.list=[]
+                }
+            }
+        })
+    </script>
+</body>
+</html>
